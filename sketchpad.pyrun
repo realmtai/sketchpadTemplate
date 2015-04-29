@@ -1,0 +1,13 @@
+#!/bin/bash
+
+python=python3
+
+command -v python3 >/dev/null 2>&1 || {
+    python=python2
+}
+
+python ./sketchpad.py && {
+    echo "using ${python}, ++++ `date` was successful"
+} || {
+    echo "using ${python}, ---- `date` was failed!"
+}
